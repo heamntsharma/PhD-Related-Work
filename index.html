@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India Heat Wave Index — LinkedIn Presentation</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #0a0aff;
+    color: #fff;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stage {
+    width: 1200px;
+    height: 675px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 72px;
+    opacity: 0;
+    transform: translateX(80px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+    pointer-events: none;
+  }
+  .slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+  .slide.exit {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+
+  /* ── SLIDE 1 — TITLE ── */
+  .s1 { background: linear-gradient(135deg, #0d0d1a 0%, #1a0a2e 50%, #0d1a2e 100%); }
+  .s1 .flame-bar { display: flex; gap: 6px; margin-bottom: 32px; }
+  .s1 .flame-bar span { width: 40px; height: 4px; border-radius: 2px; }
+  .s1 .flame-bar span:nth-child(1) { background: #ff6b2b; }
+  .s1 .flame-bar span:nth-child(2) { background: #ff9a2e; }
+  .s1 .flame-bar span:nth-child(3) { background: #ffd166; }
+  .s1 .eyebrow { font-size: 16px; letter-spacing: 3px; text-transform: uppercase; color: #ff9a2e; margin-bottom: 20px; font-weight: 500; }
+  .s1 h1 { font-size: 64px; font-weight: 800; line-height: 1.05; color: #fff; margin-bottom: 16px; }
+  .s1 h1 em { color: #ff6b2b; font-style: normal; }
+  .s1 .subtitle { font-size: 20px; color: rgba(255,255,255,0.55); line-height: 1.5; max-width: 600px; }
+  .s1 .stats-row { display: flex; gap: 48px; margin-top: 52px; }
+  .s1 .stat { }
+  .s1 .stat-num { font-size: 40px; font-weight: 800; color: #ffd166; }
+  .s1 .stat-label { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+  .s1 .geo-hint { position: absolute; right: 72px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 10px; }
+  .s1 .geo-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .geo-pulse { animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
+
+  /* ── SLIDE 2 — SCENARIO COMPARISON ── */
+  .s2 { background: #0e1117; }
+  .slide-header { margin-bottom: 40px; }
+  .slide-header .tag { font-size: 16px; letter-spacing: 2.5px; text-transform: uppercase; color: #ff9a2e; margin-bottom: 12px; }
+  .slide-header h2 { font-size: 38px; font-weight: 800; color: #fff; line-height: 1.15; }
+  .slide-header h2 em { color: #ff6b2b; font-style: normal; }
+  .scenario-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .sc-card { border-radius: 12px; padding: 28px 24px; position: relative; overflow: hidden; }
+  .sc-card.green { background: #0d1f17; border: 1px solid #1d4a2a; }
+  .sc-card.amber { background: #1f1500; border: 1px solid #4a3000; }
+  .sc-card.red { background: #1f0d0d; border: 1px solid #5a1a1a; }
+  .sc-card .sc-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
+  .sc-card.green .sc-label { color: #4ade80; }
+  .sc-card.amber .sc-label { color: #fbbf24; }
+  .sc-card.red .sc-label { color: #f87171; }
+  .sc-card .sc-name { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+  .sc-card .sc-desc { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 24px; line-height: 1.5; }
+  .sc-card .year-row { display: flex; justify-content: space-between; font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
+  .sc-card .hwi-val { font-size: 32px; font-weight: 800; }
+  .sc-card.green .hwi-val { color: #4ade80; }
+  .sc-card.amber .hwi-val { color: #fbbf24; }
+  .sc-card.red .hwi-val { color: #f87171; }
+  .sc-card .hwi-sub { font-size: 12px; color: rgba(255,255,255,0.4); }
+  .sc-card .rise-badge { margin-top: 16px; display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+  .sc-card.green .rise-badge { background: rgba(74,222,128,0.15); color: #4ade80; }
+  .sc-card.amber .rise-badge { background: rgba(251,191,36,0.15); color: #fbbf24; }
+  .sc-card.red .rise-badge { background: rgba(248,113,113,0.15); color: #f87171; }
+
+  /* ── SLIDE 3 — STATE RISK MAP ── */
+  .s3 { background: #0a0e16; }
+  .state-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
+  .state-row { display: flex; align-items: center; gap: 16px; background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px 20px; }
+  .state-risk-bar-wrap { flex: 1; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
+  .state-risk-bar { height: 100%; border-radius: 3px; transition: width 1s ease 0.3s; }
+  .state-name { font-size: 15px; font-weight: 600; color: #fff; width: 160px; flex-shrink: 0; }
+  .state-score { font-size: 14px; font-weight: 700; width: 40px; text-align: right; flex-shrink: 0; }
+  .severe-badge { font-size: 11px; padding: 2px 8px; border-radius: 10px; background: rgba(248,113,113,0.2); color: #f87171; width: 60px; text-align: center; flex-shrink: 0; }
+  .legend-row { display: flex; gap: 20px; margin-top: 20px; }
+  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.5); }
+  .legend-dot { width: 10px; height: 10px; border-radius: 2px; }
+
+  /* ── SLIDE 4 — TOP DRIVERS ── */
+  .s4 { background: #080d14; }
+  .drivers-list { display: flex; flex-direction: column; gap: 14px; margin-top: 28px; }
+  .driver-item { display: grid; grid-template-columns: 28px 1fr auto auto; align-items: center; gap: 16px; }
+  .driver-rank { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.3); }
+  .driver-name { font-size: 15px; font-weight: 600; color: #fff; }
+  .driver-cat { font-size: 11px; color: rgba(255,255,255,0.4); font-weight: 400; display: block; }
+  .driver-bar-wrap { width: 240px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
+  .driver-bar { height: 100%; border-radius: 3px; width: 0; transition: width 1.2s ease; }
+  .driver-pct { font-size: 14px; font-weight: 700; color: #ffd166; min-width: 40px; text-align: right; }
+
+  /* ── SLIDE 5 — HOTTEST YEARS ── */
+  .s5 { background: #100808; }
+  .years-chart { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+  .year-bar-row { display: grid; grid-template-columns: 64px 1fr 80px; align-items: center; gap: 16px; }
+  .year-label { font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.7); }
+  .year-bar-wrap { height: 32px; background: rgba(255,255,255,0.05); border-radius: 6px; overflow: hidden; position: relative; }
+  .year-bar-fill { height: 100%; border-radius: 6px; width: 0; transition: width 1.1s cubic-bezier(0.22,1,0.36,1); display: flex; align-items: center; padding-left: 12px; }
+  .year-context { font-size: 11px; color: rgba(255,255,255,0.4); }
+  .year-hwi { font-size: 16px; font-weight: 800; text-align: right; }
+  .fire-accent { position: absolute; right: 48px; top: 28px; font-size: 80px; opacity: 0.07; user-select: none; }
+
+  /* ── SLIDE 6 — DISTRICT RISING ── */
+  .s6 { background: #0c0a12; }
+  .district-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 28px; }
+  .district-col h3 { font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; font-weight: 600; }
+  .district-col.rising h3 { color: #f87171; }
+  .district-col.cooling h3 { color: #34d399; }
+  .district-list { display: flex; flex-direction: column; gap: 8px; }
+  .dist-row { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 8px; background: rgba(255,255,255,0.03); border: 0.5px solid rgba(255,255,255,0.06); }
+  .dist-name { font-size: 13px; font-weight: 600; color: #fff; flex: 1; }
+  .dist-state { font-size: 11px; color: rgba(255,255,255,0.35); }
+  .dist-change { font-size: 13px; font-weight: 700; }
+  .rising .dist-change { color: #f87171; }
+  .cooling .dist-change { color: #34d399; }
+
+  /* ── SLIDE 7 — CALL TO ACTION ── */
+  .s7 { background: linear-gradient(135deg, #0d0d1a 0%, #1a0a2e 50%, #0d1a2e 100%); align-items: center; text-align: center; }
+  .s7 .big-number { font-size: 120px; font-weight: 900; color: #ff6b2b; line-height: 1; }
+  .s7 .cta-label { font-size: 22px; color: rgba(255,255,255,0.7); margin-bottom: 12px; }
+  .s7 h2 { font-size: 36px; font-weight: 800; color: #fff; line-height: 1.3; margin-bottom: 28px; max-width: 720px; }
+  .s7 .hashtags { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .s7 .hashtag { font-size: 14px; color: #ff9a2e; font-weight: 600; padding: 6px 16px; border: 1px solid rgba(255,154,46,0.3); border-radius: 20px; }
+
+  /* PROGRESS BAR */
+  .progress-bar { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 100; }
+  .progress-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.2); cursor: pointer; transition: background 0.3s, transform 0.3s; }
+  .progress-dot.active { background: #ff9a2e; transform: scale(1.3); }
+
+  /* CONTROLS */
+  .controls { position: fixed; bottom: 24px; right: 48px; display: flex; gap: 10px; z-index: 100; }
+  .ctrl-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.6); color: #fff; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+  .ctrl-btn:hover { background: rgba(255,255,255,0.1); }
+
+  .slide-num { position: absolute; top: 24px; right: 32px; font-size: 13px; color: rgba(255,255,255,0.25); font-weight: 500; }
+  .brand { position: absolute; bottom: 24px; left: 32px; font-size: 12px; color: rgba(255,255,255,0.2); letter-spacing: 2px; text-transform: uppercase; }
+</style>
+</head>
+<body>
+
+<div class="stage" id="stage">
+
+  <!-- SLIDE 1: TITLE -->
+  <div class="slide s1 active" id="slide-0">
+    <div class="flame-bar">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="eyebrow">India Heat Wave Index Dashboard</div>
+    <h1>North India<br>is <em>heating up</em>.<br>The data says so.</h1>
+    <p class="subtitle">SSP5-8.5 Scenario · Historical 2000–2025 · ML Projections to 2100 · 139 Districts Analysed</p>
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-num">139</div>
+        <div class="stat-label">Districts Analysed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">35</div>
+        <div class="stat-label">Severe Risk Districts</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">49°C</div>
+        <div class="stat-label">Peak Temp Recorded</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">2024</div>
+        <div class="stat-label">All-Time HWI Peak Year</div>
+      </div>
+    </div>
+    <div class="brand">HWI · PhD Research · 2025</div>
+    <div class="slide-num">01 / 07</div>
+  </div>
+
+  <!-- SLIDE 2: THREE SCENARIOS -->
+  <div class="slide s2" id="slide-1">
+    <div class="slide-header">
+      <div class="tag">Climate Projections</div>
+      <h2>Three futures.<br>Only one is <em>unavoidable</em>.</h2>
+    </div>
+    <div class="scenario-cards">
+      <div class="sc-card green">
+        <div class="sc-label">SSP1-2.6</div>
+        <div class="sc-name">Best Case</div>
+        <div class="sc-desc">Rapid decarbonisation, aggressive green transitions, global cooperation</div>
+        <div class="year-row"><span>2030</span><span>2050</span><span>2100</span></div>
+        <div class="hwi-val">2.086</div>
+        <div class="hwi-sub">HWI by 2100</div>
+        <div class="rise-badge">↑ +0.196 rise</div>
+      </div>
+      <div class="sc-card amber">
+        <div class="sc-label">SSP2-4.5</div>
+        <div class="sc-name">Middle Path</div>
+        <div class="sc-desc">Moderate mitigation. Partial transitions. Business-as-usual for many sectors</div>
+        <div class="year-row"><span>2030</span><span>2050</span><span>2100</span></div>
+        <div class="hwi-val">2.230</div>
+        <div class="hwi-sub">HWI by 2100</div>
+        <div class="rise-badge">↑ +0.316 rise</div>
+      </div>
+      <div class="sc-card red">
+        <div class="sc-label">SSP5-8.5</div>
+        <div class="sc-name">Crisis Path</div>
+        <div class="sc-desc">No mitigation. Fossil-fuel dominated growth. Extreme warming trajectory</div>
+        <div class="year-row"><span>2030</span><span>2050</span><span>2100</span></div>
+        <div class="hwi-val">2.304</div>
+        <div class="hwi-sub">HWI by 2100</div>
+        <div class="rise-badge">↑ +0.369 rise ⚠</div>
+      </div>
+    </div>
+    <div class="slide-num">02 / 07</div>
+    <div class="brand">HWI · PhD Research · 2025</div>
+  </div>
+
+  <!-- SLIDE 3: STATE RISK -->
+  <div class="slide s3" id="slide-2">
+    <div class="slide-header">
+      <div class="tag">State-Level Risk · SSP5-8.5 Projection 2050</div>
+      <h2>Punjab leads heat stress.<br>Rajasthan surprises with recovery.</h2>
+    </div>
+    <div class="state-grid">
+      <div class="state-row">
+        <div class="state-name">Punjab</div>
+        <div class="state-risk-bar-wrap"><div class="state-risk-bar" style="width:0%;background:linear-gradient(90deg,#f87171,#dc2626);" data-w="100"></div></div>
+        <div class="state-score" style="color:#f87171">2.35</div>
+        <div class="severe-badge">11 severe</div>
+      </div>
+      <div class="state-row">
+        <div class="state-name">Uttar Pradesh</div>
+        <div class="state-risk-bar-wrap"><div class="state-risk-bar" style="width:0%;background:linear-gradient(90deg,#f97316,#ea580c);" data-w="93"></div></div>
+        <div class="state-score" style="color:#f97316">2.20</div>
+        <div class="severe-badge">21 severe</div>
+      </div>
+      <div class="state-row">
+        <div class="state-name">Delhi</div>
+        <div class="state-risk-bar-wrap"><div class="state-risk-bar" style="width:0%;background:linear-gradient(90deg,#fbbf24,#d97706);" data-w="88"></div></div>
+        <div class="state-score" style="color:#fbbf24">2.24</div>
+        <div class="severe-badge" style="color:#888;background:rgba(255,255,255,0.08);">1 high</div>
+      </div>
+      <div class="state-row">
+        <div class="state-name">Haryana</div>
+        <div class="state-risk-bar-wrap"><div class="state-risk-bar" style="width:0%;background:linear-gradient(90deg,#fbbf24,#d97706);" data-w="80"></div></div>
+        <div class="state-score" style="color:#fbbf24">2.06</div>
+        <div class="severe-badge">3 severe</div>
+      </div>
+      <div class="state-row" style="grid-column:1/-1">
+        <div class="state-name">Rajasthan</div>
+        <div class="state-risk-bar-wrap"><div class="state-risk-bar" style="width:0%;background:linear-gradient(90deg,#34d399,#059669);" data-w="52"></div></div>
+        <div class="state-score" style="color:#34d399">1.79</div>
+        <div class="severe-badge" style="color:#34d399;background:rgba(52,211,153,0.15);">0 severe</div>
+      </div>
+    </div>
+    <div class="slide-num">03 / 07</div>
+    <div class="brand">HWI · PhD Research · 2025</div>
+  </div>
+
+  <!-- SLIDE 4: SHAP DRIVERS -->
+  <div class="slide s4" id="slide-3">
+    <div class="slide-header">
+      <div class="tag">ML SHAP Feature Importance · SVR Model R² = 0.6356</div>
+      <h2>What actually drives<br>heat wave intensity?</h2>
+    </div>
+    <div class="drivers-list">
+      <div class="driver-item">
+        <span class="driver-rank">01</span>
+        <div><div class="driver-name">Maximum Temperature</div><span class="driver-cat">Temperature · Pearson r = 0.466</span></div>
+        <div class="driver-bar-wrap"><div class="driver-bar" style="background:#f87171" data-w="100"></div></div>
+        <div class="driver-pct">16.9%</div>
+      </div>
+      <div class="driver-item">
+        <span class="driver-rank">02</span>
+        <div><div class="driver-name">Heat Index</div><span class="driver-cat">Heat Stress · Pearson r = 0.534</span></div>
+        <div class="driver-bar-wrap"><div class="driver-bar" style="background:#fb923c" data-w="60"></div></div>
+        <div class="driver-pct">10.1%</div>
+      </div>
+      <div class="driver-item">
+        <span class="driver-rank">03</span>
+        <div><div class="driver-name">Land Surface Temp (lag-1)</div><span class="driver-cat">Land Surface · Pearson r = −0.322</span></div>
+        <div class="driver-bar-wrap"><div class="driver-bar" style="background:#fbbf24" data-w="57"></div></div>
+        <div class="driver-pct">9.6%</div>
+      </div>
+      <div class="driver-item">
+        <span class="driver-rank">04</span>
+        <div><div class="driver-name">Humidity Variability (3-day)</div><span class="driver-cat">Humidity · Pearson r = 0.256</span></div>
+        <div class="driver-bar-wrap"><div class="driver-bar" style="background:#a78bfa" data-w="43"></div></div>
+        <div class="driver-pct">7.2%</div>
+      </div>
+      <div class="driver-item">
+        <span class="driver-rank">05</span>
+        <div><div class="driver-name">Temperature Anomaly</div><span class="driver-cat">Temperature · Pearson r = 0.313</span></div>
+        <div class="driver-bar-wrap"><div class="driver-bar" style="background:#60a5fa" data-w="37"></div></div>
+        <div class="driver-pct">6.2%</div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 07</div>
+    <div class="brand">HWI · PhD Research · 2025</div>
+  </div>
+
+  <!-- SLIDE 5: HOTTEST YEARS -->
+  <div class="slide s5" id="slide-4">
+    <div class="slide-header">
+      <div class="tag">Historical Record 2000–2025</div>
+      <h2>2024: the most intense<br>heat wave year ever recorded.</h2>
+    </div>
+    <div class="fire-accent">🔥</div>
+    <div class="years-chart">
+      <div class="year-bar-row">
+        <div class="year-label">2024</div>
+        <div class="year-bar-wrap"><div class="year-bar-fill" style="background:linear-gradient(90deg,#dc2626,#f87171)" data-w="100"><span style="font-size:12px;color:rgba(255,255,255,0.8)">🔥 All-time record · 45.2°C · PM2.5: 87.5</span></div></div>
+        <div class="year-hwi" style="color:#f87171">2.763</div>
+      </div>
+      <div class="year-bar-row">
+        <div class="year-label">2010</div>
+        <div class="year-bar-wrap"><div class="year-bar-fill" style="background:linear-gradient(90deg,#b91c1c,#ef4444)" data-w="84"><span style="font-size:12px;color:rgba(255,255,255,0.7)">Multi-state heatwave · 44.8°C</span></div></div>
+        <div class="year-hwi" style="color:#ef4444">2.362</div>
+      </div>
+      <div class="year-bar-row">
+        <div class="year-label">2012</div>
+        <div class="year-bar-wrap"><div class="year-bar-fill" style="background:linear-gradient(90deg,#c2410c,#fb923c)" data-w="77"><span style="font-size:12px;color:rgba(255,255,255,0.7)">Drought + heat · 44.3°C</span></div></div>
+        <div class="year-hwi" style="color:#fb923c">2.209</div>
+      </div>
+      <div class="year-bar-row">
+        <div class="year-label">2019</div>
+        <div class="year-bar-wrap"><div class="year-bar-fill" style="background:linear-gradient(90deg,#b45309,#fbbf24)" data-w="75"><span style="font-size:12px;color:rgba(255,255,255,0.7)">50°C+ in Rajasthan · May heatwave</span></div></div>
+        <div class="year-hwi" style="color:#fbbf24">2.171</div>
+      </div>
+      <div class="year-bar-row">
+        <div class="year-label">2003</div>
+        <div class="year-bar-wrap"><div class="year-bar-fill" style="background:linear-gradient(90deg,#92400e,#d97706)" data-w="74"><span style="font-size:12px;color:rgba(255,255,255,0.7)">Early-season heat surge · 44.4°C</span></div></div>
+        <div class="year-hwi" style="color:#d97706">2.157</div>
+      </div>
+    </div>
+    <div class="slide-num">05 / 07</div>
+    <div class="brand">HWI · PhD Research · 2025</div>
+  </div>
+
+  <!-- SLIDE 6: DISTRICT WINNERS & LOSERS -->
+  <div class="slide s6" id="slide-5">
+    <div class="slide-header">
+      <div class="tag">District Trends · 2000–04 vs 2021–25</div>
+      <h2>Some districts heat up.<br>Others quietly recover.</h2>
+    </div>
+    <div class="district-cols">
+      <div class="district-col rising">
+        <h3>▲ Rising Heat Stress</h3>
+        <div class="district-list">
+          <div class="dist-row"><div><div class="dist-name">Bahraich</div><div class="dist-state">Uttar Pradesh</div></div><div class="dist-change">+0.121</div></div>
+          <div class="dist-row"><div><div class="dist-name">Basti</div><div class="dist-state">Uttar Pradesh</div></div><div class="dist-change">+0.115</div></div>
+          <div class="dist-row"><div><div class="dist-name">Barmer</div><div class="dist-state">Rajasthan</div></div><div class="dist-change">+0.111</div></div>
+          <div class="dist-row"><div><div class="dist-name">Jodhpur</div><div class="dist-state">Rajasthan</div></div><div class="dist-change">+0.093</div></div>
+          <div class="dist-row"><div><div class="dist-name">Gonda</div><div class="dist-state">Uttar Pradesh</div></div><div class="dist-change">+0.093</div></div>
+        </div>
+      </div>
+      <div class="district-col cooling">
+        <h3>▼ Improving Conditions</h3>
+        <div class="district-list">
+          <div class="dist-row"><div><div class="dist-name">Sawai Madhopur</div><div class="dist-state">Rajasthan</div></div><div class="dist-change">−0.824</div></div>
+          <div class="dist-row"><div><div class="dist-name">Baran</div><div class="dist-state">Rajasthan</div></div><div class="dist-change">−0.734</div></div>
+          <div class="dist-row"><div><div class="dist-name">Karauli</div><div class="dist-state">Rajasthan</div></div><div class="dist-change">−0.685</div></div>
+          <div class="dist-row"><div><div class="dist-name">Lalitpur</div><div class="dist-state">Uttar Pradesh</div></div><div class="dist-change">−0.661</div></div>
+          <div class="dist-row"><div><div class="dist-name">Kota</div><div class="dist-state">Rajasthan</div></div><div class="dist-change">−0.638</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-num">06 / 07</div>
+    <div class="brand">HWI · PhD Research · 2025</div>
+  </div>
+
+  <!-- SLIDE 7: CTA -->
+  <div class="slide s7" id="slide-6">
+    <div class="cta-label">By 2050 under SSP5-8.5, the national average HWI reaches</div>
+    <div class="big-number">2.107</div>
+    <h2>35 districts already classified<br>as Severe Risk. Action is needed now.</h2>
+    <div class="hashtags">
+      <span class="hashtag">#ClimateAction</span>
+      <span class="hashtag">#HeatWave</span>
+      <span class="hashtag">#IndiaClimate</span>
+      <span class="hashtag">#DataScience</span>
+      <span class="hashtag">#ClimateResearch</span>
+      <span class="hashtag">#PhD</span>
+    </div>
+    <div class="slide-num">07 / 07</div>
+    <div class="brand">HWI · PhD Research · 2025</div>
+  </div>
+
+</div>
+
+<!-- PROGRESS -->
+<div class="progress-bar" id="dots"></div>
+
+<!-- CONTROLS -->
+<div class="controls">
+  <button class="ctrl-btn" id="prevBtn" onclick="changeSlide(-1)">&#8592;</button>
+  <button class="ctrl-btn" id="playBtn" onclick="togglePlay()">&#9646;&#9646;</button>
+  <button class="ctrl-btn" onclick="changeSlide(1)">&#8594;</button>
+</div>
+
+<script>
+const TOTAL = 7;
+let current = 0;
+let playing = true;
+let timer;
+
+const slides = document.querySelectorAll('.slide');
+const dotsEl = document.getElementById('dots');
+
+for (let i = 0; i < TOTAL; i++) {
+  const d = document.createElement('div');
+  d.className = 'progress-dot' + (i === 0 ? ' active' : '');
+  d.onclick = () => goTo(i);
+  dotsEl.appendChild(d);
+}
+
+function activateBars(slideEl) {
+  setTimeout(() => {
+    slideEl.querySelectorAll('[data-w]').forEach(el => {
+      el.style.width = el.dataset.w + '%';
+    });
+  }, 200);
+}
+
+function goTo(n) {
+  const prev = slides[current];
+  prev.classList.remove('active');
+  prev.classList.add('exit');
+  setTimeout(() => prev.classList.remove('exit'), 600);
+
+  current = (n + TOTAL) % TOTAL;
+  const next = slides[current];
+  next.classList.add('active');
+  activateBars(next);
+
+  document.querySelectorAll('.progress-dot').forEach((d, i) => {
+    d.classList.toggle('active', i === current);
+  });
+}
+
+function changeSlide(dir) {
+  goTo(current + dir);
+  if (playing) resetTimer();
+}
+
+function resetTimer() {
+  clearInterval(timer);
+  timer = setInterval(() => goTo(current + 1), 5500);
+}
+
+function togglePlay() {
+  playing = !playing;
+  document.getElementById('playBtn').innerHTML = playing ? '&#9646;&#9646;' : '&#9654;';
+  if (playing) resetTimer(); else clearInterval(timer);
+}
+
+activateBars(slides[0]);
+resetTimer();
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') changeSlide(1);
+  if (e.key === 'ArrowLeft') changeSlide(-1);
+  if (e.key === ' ') togglePlay();
+});
+</script>
+</body>
+</html>
