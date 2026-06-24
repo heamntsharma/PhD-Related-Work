@@ -26,10 +26,15 @@
     overflow: hidden;
     border-radius: 12px;
   } */
-.stage{
+/* .stage{
   width:min(1200px,100vw);
   height:min(675px,100vh);
   aspect-ratio:16/9;
+} */
+ .stage{
+    width:min(1200px,95vw);
+    aspect-ratio:16/9;
+    margin:auto;
 }
   .slide {
     position: absolute;
@@ -61,7 +66,7 @@
   .s1 .flame-bar span:nth-child(2) { background: #ff9a2e; }
   .s1 .flame-bar span:nth-child(3) { background: #ffd166; }
   .s1 .eyebrow { font-size: 16px; letter-spacing: 3px; text-transform: uppercase; color: #ff9a2e; margin-bottom: 20px; font-weight: 500; }
-  .s1 h1 { font-size: 64px; font-weight: 800; line-height: 1.05; color: #fff; margin-bottom: 16px; }
+  .s1 h1 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 800; line-height: 1.05; color: #fff; margin-bottom: 16px; }
   .s1 h1 em { color: #ff6b2b; font-style: normal; }
   .s1 .subtitle { font-size: 20px; color: rgba(255,255,255,0.55); line-height: 1.5; max-width: 600px; }
   .s1 .stats-row { display: flex; gap: 48px; margin-top: 52px; }
@@ -79,7 +84,13 @@
   .slide-header .tag { font-size: 16px; letter-spacing: 2.5px; text-transform: uppercase; color: #ff9a2e; margin-bottom: 12px; }
   .slide-header h2 { font-size: 38px; font-weight: 800; color: #fff; line-height: 1.15; }
   .slide-header h2 em { color: #ff6b2b; font-style: normal; }
-  .scenario-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  /* .scenario-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; } */
+ .scenario-cards{
+    display:grid;
+    grid-template-columns:
+      repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
   .sc-card { border-radius: 12px; padding: 28px 24px; position: relative; overflow: hidden; }
   .sc-card.green { background: #0d1f17; border: 1px solid #1d4a2a; }
   .sc-card.amber { background: #1f1500; border: 1px solid #4a3000; }
