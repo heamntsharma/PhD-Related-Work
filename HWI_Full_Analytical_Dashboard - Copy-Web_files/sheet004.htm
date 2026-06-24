@@ -1,0 +1,493 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link id=Main-File rel=Main-File
+href="../HWI_Full_Analytical_Dashboard%20-%20Copy-Web.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:1.0in .75in 1.0in .75in;
+	mso-header-margin:.51in;
+	mso-footer-margin:.51in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(3);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../HWI_Full_Analytical_Dashboard%20-%20Copy-Web.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link=blue vlink=purple>
+
+<table border=0 cellpadding=0 cellspacing=0 width=1277 style='border-collapse:
+ collapse;table-layout:fixed;width:959pt'>
+ <col width=239 style='mso-width-source:userset;mso-width-alt:8504;width:179pt'>
+ <col width=196 style='mso-width-source:userset;mso-width-alt:6968;width:147pt'>
+ <col width=86 span=3 style='mso-width-source:userset;mso-width-alt:3072;
+ width:65pt'>
+ <col width=118 style='mso-width-source:userset;mso-width-alt:4209;width:89pt'>
+ <col width=214 style='mso-width-source:userset;mso-width-alt:7594;width:160pt'>
+ <col width=252 style='mso-width-source:userset;mso-width-alt:8960;width:189pt'>
+ <tr height=45 style='mso-height-source:userset;height:33.75pt'>
+  <td colspan=8 height=45 class=xl188 width=1277 style='height:33.75pt;
+  width:959pt'>&#129302;<span style='mso-spacerun:yes'>  </span>ML Model
+  Performance — Phase 4 &amp; 5 Comparison</td>
+ </tr>
+ <tr height=26 style='mso-height-source:userset;height:19.5pt'>
+  <td colspan=8 height=26 class=xl184 style='height:19.5pt'>8 Models × 4
+  Targets | SVR, XGBoost, RandomForest, LSTM, GRU, CNN-LSTM, Transformer,
+  Prophet</td>
+ </tr>
+ <tr height=10 style='mso-height-source:userset;height:7.5pt'>
+  <td height=10 colspan=8 style='height:7.5pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=29 style='mso-height-source:userset;height:21.75pt'>
+  <td colspan=8 height=29 class=xl185 style='height:21.75pt'>&#9989;<span
+  style='mso-spacerun:yes'>  </span>BEST MODEL PER TARGET</td>
+ </tr>
+ <tr height=29 style='mso-height-source:userset;height:21.75pt'>
+  <td height=29 class=xl107 width=239 style='height:21.75pt;width:179pt'>Target</td>
+  <td class=xl107 width=196 style='border-left:none;width:147pt'>Best Model</td>
+  <td class=xl107 width=86 style='border-left:none;width:65pt'>R²</td>
+  <td class=xl107 width=86 style='border-left:none;width:65pt'>RMSE</td>
+  <td class=xl107 width=86 style='border-left:none;width:65pt'>MAE</td>
+  <td class=xl107 width=118 style='border-left:none;width:89pt'>Performance</td>
+  <td class=xl107 width=214 style='border-left:none;width:160pt'>Recommendation</td>
+  <td></td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td height=40 class=xl66 style='height:30.0pt;border-top:none'>Heat Wave
+  Density</td>
+  <td class=xl119 style='border-top:none;border-left:none'>SVR</td>
+  <td class=xl120 style='border-top:none;border-left:none'>0.4918</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.0297</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.0240</td>
+  <td class=xl122 style='border-top:none;border-left:none'>&#11088;&#11088;
+  Good</td>
+  <td class=xl123 width=214 style='border-top:none;border-left:none;width:160pt'>Moderate
+  fit. SVR best; tree models underperform.</td>
+  <td></td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td height=40 class=xl74 style='height:30.0pt;border-top:none'>HW Frequency</td>
+  <td class=xl124 style='border-top:none;border-left:none'>SVR</td>
+  <td class=xl125 style='border-top:none;border-left:none'>0.2282</td>
+  <td class=xl126 style='border-top:none;border-left:none'>13.3947</td>
+  <td class=xl126 style='border-top:none;border-left:none'>11.3222</td>
+  <td class=xl99 style='border-top:none;border-left:none'>&#11088; Fair</td>
+  <td class=xl127 width=214 style='border-top:none;border-left:none;width:160pt'>Moderate
+  for all. SVR leads on RMSE.</td>
+  <td></td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td height=40 class=xl66 style='height:30.0pt;border-top:none'>Heat Wave
+  Index</td>
+  <td class=xl119 style='border-top:none;border-left:none'>SVR</td>
+  <td class=xl128 style='border-top:none;border-left:none'>0.6356</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.3870</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.2840</td>
+  <td class=xl129 style='border-top:none;border-left:none'>&#11088;&#11088;&#11088;
+  Excellent</td>
+  <td class=xl123 width=214 style='border-top:none;border-left:none;width:160pt'>Strong
+  fit (R²=0.64). SVR captures non-linear heat dynamics.</td>
+  <td></td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td height=40 class=xl74 style='height:30.0pt;border-top:none'>Exposure Area</td>
+  <td class=xl124 style='border-top:none;border-left:none'>Prophet_Heatwave_Exposure</td>
+  <td class=xl130 style='border-top:none;border-left:none'>1.0000</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.0000</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.0000</td>
+  <td class=xl131 style='border-top:none;border-left:none'>&#11088;&#11088;&#11088;
+  Excellent</td>
+  <td class=xl127 width=214 style='border-top:none;border-left:none;width:160pt'>Excellent
+  — near-perfect capture of spatial exposure.</td>
+  <td></td>
+ </tr>
+ <tr height=10 style='mso-height-source:userset;height:7.5pt'>
+  <td height=10 colspan=8 style='height:7.5pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=29 style='mso-height-source:userset;height:21.75pt'>
+  <td colspan=8 height=29 class=xl175 style='height:21.75pt'>FULL COMPARISON —
+  ALL MODELS &amp; TARGETS</td>
+ </tr>
+ <tr height=29 style='mso-height-source:userset;height:21.75pt'>
+  <td height=29 class=xl65 width=239 style='height:21.75pt;width:179pt'>Model</td>
+  <td class=xl65 width=196 style='border-left:none;width:147pt'>Target</td>
+  <td class=xl65 width=86 style='border-left:none;width:65pt'>RMSE</td>
+  <td class=xl65 width=86 style='border-left:none;width:65pt'>MAE</td>
+  <td class=xl65 width=86 style='border-left:none;width:65pt'>R²</td>
+  <td class=xl65 width=118 style='border-left:none;width:89pt'>MAPE%</td>
+  <td class=xl65 width=214 style='border-left:none;width:160pt'>R² Rating</td>
+  <td class=xl65 width=252 style='border-left:none;width:189pt'>Notes</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl66 style='height:18.0pt;border-top:none'>SVR</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Heat Wave Density</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.0297</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.0240</td>
+  <td class=xl132 style='border-top:none;border-left:none'>0.4918</td>
+  <td class=xl133 style='border-top:none;border-left:none'>52.37</td>
+  <td class=xl122 style='border-top:none;border-left:none'>&#11088;&#11088;
+  Good</td>
+  <td class=xl119 style='border-top:none;border-left:none'>Best for this target</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl74 style='height:18.0pt;border-top:none'>XGBoost</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Heat Wave Density</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.0353</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.0300</td>
+  <td class=xl134 style='border-top:none;border-left:none'>0.2837</td>
+  <td class=xl135 style='border-top:none;border-left:none'>69.00</td>
+  <td class=xl136 style='border-top:none;border-left:none'>&#11088; Fair</td>
+  <td class=xl137 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl66 style='height:18.0pt;border-top:none'>Prophet</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Heat Wave Density</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.0394</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.0344</td>
+  <td class=xl138 style='border-top:none;border-left:none'>-0.2098</td>
+  <td class=xl133 style='border-top:none;border-left:none'>48.77</td>
+  <td class=xl93 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl139 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl74 style='height:18.0pt;border-top:none'>RandomForest</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Heat Wave Density</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.0404</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.0344</td>
+  <td class=xl134 style='border-top:none;border-left:none'>0.0640</td>
+  <td class=xl135 style='border-top:none;border-left:none'>81.93</td>
+  <td class=xl136 style='border-top:none;border-left:none'>&#11088; Fair</td>
+  <td class=xl137 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl66 style='height:18.0pt;border-top:none'>LSTM</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Heat Wave Density</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.0484</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.0425</td>
+  <td class=xl138 style='border-top:none;border-left:none'>-0.3456</td>
+  <td class=xl133 style='border-top:none;border-left:none'>100.92</td>
+  <td class=xl93 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl139 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl74 style='height:18.0pt;border-top:none'>CNN_LSTM</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Heat Wave Density</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.0493</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.0433</td>
+  <td class=xl140 style='border-top:none;border-left:none'>-0.3944</td>
+  <td class=xl135 style='border-top:none;border-left:none'>103.10</td>
+  <td class=xl99 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl137 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl66 style='height:18.0pt;border-top:none'>Transformer</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Heat Wave Density</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.0526</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.0449</td>
+  <td class=xl138 style='border-top:none;border-left:none'>-0.5919</td>
+  <td class=xl133 style='border-top:none;border-left:none'>111.27</td>
+  <td class=xl93 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl139 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl74 style='height:18.0pt;border-top:none'>GRU</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Heat Wave Density</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.0560</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.0476</td>
+  <td class=xl140 style='border-top:none;border-left:none'>-0.8047</td>
+  <td class=xl135 style='border-top:none;border-left:none'>116.95</td>
+  <td class=xl99 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl137 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl66 style='height:18.0pt;border-top:none'>SVR</td>
+  <td class=xl94 style='border-top:none;border-left:none'>HW Frequency</td>
+  <td class=xl121 style='border-top:none;border-left:none'>13.3947</td>
+  <td class=xl121 style='border-top:none;border-left:none'>11.3222</td>
+  <td class=xl141 style='border-top:none;border-left:none'>0.2282</td>
+  <td class=xl133 style='border-top:none;border-left:none'>72.76</td>
+  <td class=xl142 style='border-top:none;border-left:none'>&#11088; Fair</td>
+  <td class=xl119 style='border-top:none;border-left:none'>Best for this target</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl74 style='height:18.0pt;border-top:none'>Prophet</td>
+  <td class=xl100 style='border-top:none;border-left:none'>HW Frequency</td>
+  <td class=xl126 style='border-top:none;border-left:none'>14.3580</td>
+  <td class=xl126 style='border-top:none;border-left:none'>12.6590</td>
+  <td class=xl140 style='border-top:none;border-left:none'>-0.2032</td>
+  <td class=xl135 style='border-top:none;border-left:none'>49.61</td>
+  <td class=xl99 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl137 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl66 style='height:18.0pt;border-top:none'>XGBoost</td>
+  <td class=xl94 style='border-top:none;border-left:none'>HW Frequency</td>
+  <td class=xl121 style='border-top:none;border-left:none'>14.4254</td>
+  <td class=xl121 style='border-top:none;border-left:none'>12.2657</td>
+  <td class=xl141 style='border-top:none;border-left:none'>0.1048</td>
+  <td class=xl133 style='border-top:none;border-left:none'>79.33</td>
+  <td class=xl142 style='border-top:none;border-left:none'>&#11088; Fair</td>
+  <td class=xl139 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl74 style='height:18.0pt;border-top:none'>RandomForest</td>
+  <td class=xl100 style='border-top:none;border-left:none'>HW Frequency</td>
+  <td class=xl126 style='border-top:none;border-left:none'>14.7130</td>
+  <td class=xl126 style='border-top:none;border-left:none'>12.5346</td>
+  <td class=xl134 style='border-top:none;border-left:none'>0.0688</td>
+  <td class=xl135 style='border-top:none;border-left:none'>81.94</td>
+  <td class=xl136 style='border-top:none;border-left:none'>&#11088; Fair</td>
+  <td class=xl137 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl66 style='height:18.0pt;border-top:none'>GRU</td>
+  <td class=xl94 style='border-top:none;border-left:none'>HW Frequency</td>
+  <td class=xl121 style='border-top:none;border-left:none'>17.7415</td>
+  <td class=xl121 style='border-top:none;border-left:none'>15.5697</td>
+  <td class=xl138 style='border-top:none;border-left:none'>-0.3541</td>
+  <td class=xl133 style='border-top:none;border-left:none'>101.73</td>
+  <td class=xl93 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl139 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl74 style='height:18.0pt;border-top:none'>LSTM</td>
+  <td class=xl100 style='border-top:none;border-left:none'>HW Frequency</td>
+  <td class=xl126 style='border-top:none;border-left:none'>17.7639</td>
+  <td class=xl126 style='border-top:none;border-left:none'>15.5765</td>
+  <td class=xl140 style='border-top:none;border-left:none'>-0.3575</td>
+  <td class=xl135 style='border-top:none;border-left:none'>101.90</td>
+  <td class=xl99 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl137 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl66 style='height:18.0pt;border-top:none'>Transformer</td>
+  <td class=xl94 style='border-top:none;border-left:none'>HW Frequency</td>
+  <td class=xl121 style='border-top:none;border-left:none'>17.8476</td>
+  <td class=xl121 style='border-top:none;border-left:none'>15.6319</td>
+  <td class=xl138 style='border-top:none;border-left:none'>-0.3703</td>
+  <td class=xl133 style='border-top:none;border-left:none'>102.46</td>
+  <td class=xl93 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl139 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl74 style='height:18.0pt;border-top:none'>CNN_LSTM</td>
+  <td class=xl100 style='border-top:none;border-left:none'>HW Frequency</td>
+  <td class=xl126 style='border-top:none;border-left:none'>18.9270</td>
+  <td class=xl126 style='border-top:none;border-left:none'>16.2636</td>
+  <td class=xl140 style='border-top:none;border-left:none'>-0.5411</td>
+  <td class=xl135 style='border-top:none;border-left:none'>109.39</td>
+  <td class=xl99 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl137 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl66 style='height:18.0pt;border-top:none'>SVR</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Heat Wave Index</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.3870</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.2840</td>
+  <td class=xl128 style='border-top:none;border-left:none'>0.6356</td>
+  <td class=xl133 style='border-top:none;border-left:none'>19.14</td>
+  <td class=xl129 style='border-top:none;border-left:none'>&#11088;&#11088;&#11088;
+  Excellent</td>
+  <td class=xl119 style='border-top:none;border-left:none'>Best for this target</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl74 style='height:18.0pt;border-top:none'>XGBoost</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Heat Wave Index</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.4366</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.3561</td>
+  <td class=xl143 style='border-top:none;border-left:none'>0.5362</td>
+  <td class=xl135 style='border-top:none;border-left:none'>25.47</td>
+  <td class=xl144 style='border-top:none;border-left:none'>&#11088;&#11088;
+  Good</td>
+  <td class=xl137 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl66 style='height:18.0pt;border-top:none'>RandomForest</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Heat Wave Index</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.4743</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.3888</td>
+  <td class=xl132 style='border-top:none;border-left:none'>0.4527</td>
+  <td class=xl133 style='border-top:none;border-left:none'>28.43</td>
+  <td class=xl122 style='border-top:none;border-left:none'>&#11088;&#11088;
+  Good</td>
+  <td class=xl139 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl74 style='height:18.0pt;border-top:none'>Prophet</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Heat Wave Index</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.6073</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.4788</td>
+  <td class=xl140 style='border-top:none;border-left:none'>-0.2707</td>
+  <td class=xl135 style='border-top:none;border-left:none'>29.62</td>
+  <td class=xl99 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl137 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl66 style='height:18.0pt;border-top:none'>LSTM</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Heat Wave Index</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.6509</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.5257</td>
+  <td class=xl138 style='border-top:none;border-left:none'>-0.0306</td>
+  <td class=xl133 style='border-top:none;border-left:none'>39.00</td>
+  <td class=xl93 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl139 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl74 style='height:18.0pt;border-top:none'>GRU</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Heat Wave Index</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.6639</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.5467</td>
+  <td class=xl140 style='border-top:none;border-left:none'>-0.0721</td>
+  <td class=xl135 style='border-top:none;border-left:none'>41.80</td>
+  <td class=xl99 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl137 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl66 style='height:18.0pt;border-top:none'>CNN_LSTM</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Heat Wave Index</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.6649</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.5491</td>
+  <td class=xl138 style='border-top:none;border-left:none'>-0.0755</td>
+  <td class=xl133 style='border-top:none;border-left:none'>42.06</td>
+  <td class=xl93 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl139 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl74 style='height:18.0pt;border-top:none'>Transformer</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Heat Wave Index</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.6843</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.5714</td>
+  <td class=xl140 style='border-top:none;border-left:none'>-0.1392</td>
+  <td class=xl135 style='border-top:none;border-left:none'>44.52</td>
+  <td class=xl99 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl137 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl66 style='height:18.0pt;border-top:none'>Prophet_Heatwave_Exposure</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Exposure Area</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.0000</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.0000</td>
+  <td class=xl128 style='border-top:none;border-left:none'>1.0000</td>
+  <td class=xl133 style='border-top:none;border-left:none'>0.00</td>
+  <td class=xl129 style='border-top:none;border-left:none'>&#11088;&#11088;&#11088;
+  Excellent</td>
+  <td class=xl119 style='border-top:none;border-left:none'>Best for this target</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl74 style='height:18.0pt;border-top:none'>XGBoost_Heatwave_Exposure</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Exposure Area</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.3838</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.2704</td>
+  <td class=xl130 style='border-top:none;border-left:none'>0.9593</td>
+  <td class=xl135 style='border-top:none;border-left:none'>0.25</td>
+  <td class=xl131 style='border-top:none;border-left:none'>&#11088;&#11088;&#11088;
+  Excellent</td>
+  <td class=xl137 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl66 style='height:18.0pt;border-top:none'>RandomForest_Heatwave_Exposure</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Exposure Area</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.4430</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.3129</td>
+  <td class=xl128 style='border-top:none;border-left:none'>0.9457</td>
+  <td class=xl133 style='border-top:none;border-left:none'>0.29</td>
+  <td class=xl129 style='border-top:none;border-left:none'>&#11088;&#11088;&#11088;
+  Excellent</td>
+  <td class=xl139 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl74 style='height:18.0pt;border-top:none'>SVR_Heatwave_Exposure</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Exposure Area</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.4580</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.3733</td>
+  <td class=xl130 style='border-top:none;border-left:none'>0.9420</td>
+  <td class=xl135 style='border-top:none;border-left:none'>0.34</td>
+  <td class=xl131 style='border-top:none;border-left:none'>&#11088;&#11088;&#11088;
+  Excellent</td>
+  <td class=xl137 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl66 style='height:18.0pt;border-top:none'>Transformer_Heatwave_Exposure</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Exposure Area</td>
+  <td class=xl121 style='border-top:none;border-left:none'>1.9194</td>
+  <td class=xl121 style='border-top:none;border-left:none'>1.5752</td>
+  <td class=xl138 style='border-top:none;border-left:none'>-0.0189</td>
+  <td class=xl133 style='border-top:none;border-left:none'>1.45</td>
+  <td class=xl93 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl139 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl74 style='height:18.0pt;border-top:none'>GRU_Heatwave_Exposure</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Exposure Area</td>
+  <td class=xl126 style='border-top:none;border-left:none'>1.9529</td>
+  <td class=xl126 style='border-top:none;border-left:none'>1.6586</td>
+  <td class=xl140 style='border-top:none;border-left:none'>-0.0547</td>
+  <td class=xl135 style='border-top:none;border-left:none'>1.52</td>
+  <td class=xl99 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl137 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl66 style='height:18.0pt;border-top:none'>LSTM_Heatwave_Exposure</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Exposure Area</td>
+  <td class=xl121 style='border-top:none;border-left:none'>2.0107</td>
+  <td class=xl121 style='border-top:none;border-left:none'>1.7152</td>
+  <td class=xl138 style='border-top:none;border-left:none'>-0.1181</td>
+  <td class=xl133 style='border-top:none;border-left:none'>1.56</td>
+  <td class=xl93 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl139 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl74 style='height:18.0pt;border-top:none'>CNN_LSTM_Heatwave_Exposure</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Exposure Area</td>
+  <td class=xl126 style='border-top:none;border-left:none'>2.0894</td>
+  <td class=xl126 style='border-top:none;border-left:none'>1.7865</td>
+  <td class=xl140 style='border-top:none;border-left:none'>-0.2074</td>
+  <td class=xl135 style='border-top:none;border-left:none'>1.63</td>
+  <td class=xl99 style='border-top:none;border-left:none'>&#10060; Negative</td>
+  <td class=xl137 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=239 style='width:179pt'></td>
+  <td width=196 style='width:147pt'></td>
+  <td width=86 style='width:65pt'></td>
+  <td width=86 style='width:65pt'></td>
+  <td width=86 style='width:65pt'></td>
+  <td width=118 style='width:89pt'></td>
+  <td width=214 style='width:160pt'></td>
+  <td width=252 style='width:189pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,567 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link id=Main-File rel=Main-File
+href="../HWI_Full_Analytical_Dashboard%20-%20Copy-Web.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:1.0in .75in 1.0in .75in;
+	mso-header-margin:.51in;
+	mso-footer-margin:.51in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(4);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../HWI_Full_Analytical_Dashboard%20-%20Copy-Web.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link=blue vlink=purple>
+
+<table border=0 cellpadding=0 cellspacing=0 width=1236 style='border-collapse:
+ collapse;table-layout:fixed;width:927pt'>
+ <col width=134 style='mso-width-source:userset;mso-width-alt:4750;width:100pt'>
+ <col width=202 style='mso-width-source:userset;mso-width-alt:7168;width:151pt'>
+ <col width=101 style='mso-width-source:userset;mso-width-alt:3584;width:76pt'>
+ <col width=86 style='mso-width-source:userset;mso-width-alt:3072;width:65pt'>
+ <col width=207 style='mso-width-source:userset;mso-width-alt:7367;width:155pt'>
+ <col width=204 style='mso-width-source:userset;mso-width-alt:7253;width:153pt'>
+ <col width=86 span=2 style='mso-width-source:userset;mso-width-alt:3072;
+ width:65pt'>
+ <col width=130 style='mso-width-source:userset;mso-width-alt:4608;width:97pt'>
+ <col width=86 style='mso-width-source:userset;mso-width-alt:3072;width:65pt'>
+ <col width=216 style='mso-width-source:userset;mso-width-alt:7680;width:162pt'>
+ <col width=252 style='mso-width-source:userset;mso-width-alt:8960;width:189pt'>
+ <tr height=45 style='mso-height-source:userset;height:33.75pt'>
+  <td colspan=8 height=45 class=xl189 width=1106 style='height:33.75pt;
+  width:830pt'>&#128300;<span style='mso-spacerun:yes'>  </span>Feature
+  Influence on HWI — SHAP + Granger + Correlation</td>
+  <td width=130 style='width:97pt'></td>
+ </tr>
+ <tr height=26 style='mso-height-source:userset;height:19.5pt'>
+  <td colspan=8 height=26 class=xl184 style='height:19.5pt'>Phase 7 Analysis |
+  34 Features Ranked by SHAP Importance | Granger Causality for Key Variables</td>
+  <td></td>
+ </tr>
+ <tr height=10 style='mso-height-source:userset;height:7.5pt'>
+  <td height=10 colspan=9 style='height:7.5pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=29 style='mso-height-source:userset;height:21.75pt'>
+  <td colspan=8 height=29 class=xl177 style='height:21.75pt'>MASTER INFLUENCE
+  TABLE — TOP 34 FEATURES (Ranked by SHAP)</td>
+  <td></td>
+ </tr>
+ <tr height=29 style='mso-height-source:userset;height:21.75pt'>
+  <td height=29 class=xl145 width=134 style='height:21.75pt;width:100pt'>Rank</td>
+  <td class=xl145 width=202 style='border-left:none;width:151pt'>Feature</td>
+  <td class=xl145 width=101 style='border-left:none;width:76pt'>SHAP Importance</td>
+  <td class=xl145 width=86 style='border-left:none;width:65pt'>% of Total SHAP</td>
+  <td class=xl145 width=207 style='border-left:none;width:155pt'>Pearson r</td>
+  <td class=xl145 width=204 style='border-left:none;width:153pt'>Corr Strength</td>
+  <td class=xl145 width=86 style='border-left:none;width:65pt'>Granger p</td>
+  <td class=xl145 width=86 style='border-left:none;width:65pt'>Granger Sig</td>
+  <td class=xl145 width=130 style='border-left:none;width:97pt'>Category</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl67 style='height:18.0pt;border-top:none'>1</td>
+  <td class=xl89 style='border-top:none;border-left:none'>Max_Temp_C</td>
+  <td class=xl146 style='border-top:none;border-left:none'>0.14266</td>
+  <td class=xl147 style='border-top:none;border-left:none'>16.9</td>
+  <td class=xl92 style='border-top:none;border-left:none'>0.466</td>
+  <td class=xl93 style='border-top:none;border-left:none'>Strong</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.2586</td>
+  <td class=xl148 style='border-top:none;border-left:none'>No</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Temperature</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl75 style='height:18.0pt;border-top:none'>2</td>
+  <td class=xl95 style='border-top:none;border-left:none'>HeatIndex</td>
+  <td class=xl149 style='border-top:none;border-left:none'>0.08509</td>
+  <td class=xl150 style='border-top:none;border-left:none'>10.1</td>
+  <td class=xl98 style='border-top:none;border-left:none'>0.534</td>
+  <td class=xl99 style='border-top:none;border-left:none'>Strong</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Heat Stress</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl67 style='height:18.0pt;border-top:none'>3</td>
+  <td class=xl89 style='border-top:none;border-left:none'>LST_C_lag1</td>
+  <td class=xl151 style='border-top:none;border-left:none'>0.08086</td>
+  <td class=xl147 style='border-top:none;border-left:none'>9.6</td>
+  <td class=xl102 style='border-top:none;border-left:none'>-0.322</td>
+  <td class=xl103 style='border-top:none;border-left:none'>Moderate</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Land Surface Temp</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl76 style='height:18.0pt;border-top:none'>4</td>
+  <td class=xl152 style='border-top:none;border-left:none'>RH_percent_roll3_std</td>
+  <td class=xl153 style='border-top:none;border-left:none'>0.06135</td>
+  <td class=xl150 style='border-top:none;border-left:none'>7.2</td>
+  <td class=xl105 style='border-top:none;border-left:none'>0.256</td>
+  <td class=xl106 style='border-top:none;border-left:none'>Moderate</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Humidity</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl84 style='height:18.0pt;border-top:none'>5</td>
+  <td class=xl154 style='border-top:none;border-left:none'>TempAnomaly</td>
+  <td class=xl155 style='border-top:none;border-left:none'>0.05261</td>
+  <td class=xl147 style='border-top:none;border-left:none'>6.2</td>
+  <td class=xl102 style='border-top:none;border-left:none'>0.313</td>
+  <td class=xl103 style='border-top:none;border-left:none'>Moderate</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Temperature</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl76 style='height:18.0pt;border-top:none'>6</td>
+  <td class=xl152 style='border-top:none;border-left:none'>DewPoint_C</td>
+  <td class=xl153 style='border-top:none;border-left:none'>0.04495</td>
+  <td class=xl150 style='border-top:none;border-left:none'>5.3</td>
+  <td class=xl156 style='border-top:none;border-left:none'>0.040</td>
+  <td class=xl136 style='border-top:none;border-left:none'>Weak</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Humidity</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl84 style='height:18.0pt;border-top:none'>7</td>
+  <td class=xl154 style='border-top:none;border-left:none'>SolarRadiation_Jm2_lag2</td>
+  <td class=xl155 style='border-top:none;border-left:none'>0.03238</td>
+  <td class=xl147 style='border-top:none;border-left:none'>3.8</td>
+  <td class=xl157 style='border-top:none;border-left:none'>-0.223</td>
+  <td class=xl142 style='border-top:none;border-left:none'>Weak</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Solar Radiation</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl76 style='height:18.0pt;border-top:none'>8</td>
+  <td class=xl152 style='border-top:none;border-left:none'>SolarRadiation_Jm2_lag7</td>
+  <td class=xl153 style='border-top:none;border-left:none'>0.03014</td>
+  <td class=xl150 style='border-top:none;border-left:none'>3.6</td>
+  <td class=xl105 style='border-top:none;border-left:none'>-0.272</td>
+  <td class=xl106 style='border-top:none;border-left:none'>Moderate</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Solar Radiation</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl84 style='height:18.0pt;border-top:none'>9</td>
+  <td class=xl154 style='border-top:none;border-left:none'>SoilMoisture</td>
+  <td class=xl155 style='border-top:none;border-left:none'>0.02904</td>
+  <td class=xl147 style='border-top:none;border-left:none'>3.4</td>
+  <td class=xl157 style='border-top:none;border-left:none'>0.050</td>
+  <td class=xl142 style='border-top:none;border-left:none'>Weak</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.1008</td>
+  <td class=xl148 style='border-top:none;border-left:none'>No</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Soil/Hydrology</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl76 style='height:18.0pt;border-top:none'>10</td>
+  <td class=xl152 style='border-top:none;border-left:none'>RH_percent_lag5</td>
+  <td class=xl153 style='border-top:none;border-left:none'>0.02858</td>
+  <td class=xl150 style='border-top:none;border-left:none'>3.4</td>
+  <td class=xl156 style='border-top:none;border-left:none'>0.227</td>
+  <td class=xl136 style='border-top:none;border-left:none'>Weak</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Humidity</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl84 style='height:18.0pt;border-top:none'>11</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Rainfall_mm</td>
+  <td class=xl155 style='border-top:none;border-left:none'>0.02432</td>
+  <td class=xl147 style='border-top:none;border-left:none'>2.9</td>
+  <td class=xl157 style='border-top:none;border-left:none'>0.053</td>
+  <td class=xl142 style='border-top:none;border-left:none'>Weak</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.8129</td>
+  <td class=xl148 style='border-top:none;border-left:none'>No</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Precipitation</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl76 style='height:18.0pt;border-top:none'>12</td>
+  <td class=xl100 style='border-top:none;border-left:none'>LST_C_lag2</td>
+  <td class=xl153 style='border-top:none;border-left:none'>0.02314</td>
+  <td class=xl150 style='border-top:none;border-left:none'>2.7</td>
+  <td class=xl105 style='border-top:none;border-left:none'>-0.319</td>
+  <td class=xl106 style='border-top:none;border-left:none'>Moderate</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Land Surface Temp</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl84 style='height:18.0pt;border-top:none'>13</td>
+  <td class=xl94 style='border-top:none;border-left:none'>RH_percent</td>
+  <td class=xl155 style='border-top:none;border-left:none'>0.02292</td>
+  <td class=xl147 style='border-top:none;border-left:none'>2.7</td>
+  <td class=xl157 style='border-top:none;border-left:none'>0.087</td>
+  <td class=xl142 style='border-top:none;border-left:none'>Weak</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.2811</td>
+  <td class=xl148 style='border-top:none;border-left:none'>No</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Other</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl76 style='height:18.0pt;border-top:none'>14</td>
+  <td class=xl100 style='border-top:none;border-left:none'>LST_C_lag7</td>
+  <td class=xl153 style='border-top:none;border-left:none'>0.02197</td>
+  <td class=xl150 style='border-top:none;border-left:none'>2.6</td>
+  <td class=xl105 style='border-top:none;border-left:none'>-0.317</td>
+  <td class=xl106 style='border-top:none;border-left:none'>Moderate</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Other</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl84 style='height:18.0pt;border-top:none'>15</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Min_Temp_C</td>
+  <td class=xl155 style='border-top:none;border-left:none'>0.01779</td>
+  <td class=xl147 style='border-top:none;border-left:none'>2.1</td>
+  <td class=xl157 style='border-top:none;border-left:none'>-0.044</td>
+  <td class=xl142 style='border-top:none;border-left:none'>Weak</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Other</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl76 style='height:18.0pt;border-top:none'>16</td>
+  <td class=xl100 style='border-top:none;border-left:none'>SurfacePressure_Pa</td>
+  <td class=xl153 style='border-top:none;border-left:none'>0.01478</td>
+  <td class=xl150 style='border-top:none;border-left:none'>1.7</td>
+  <td class=xl156 style='border-top:none;border-left:none'>0.043</td>
+  <td class=xl136 style='border-top:none;border-left:none'>Weak</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Other</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl84 style='height:18.0pt;border-top:none'>17</td>
+  <td class=xl94 style='border-top:none;border-left:none'>LST_C</td>
+  <td class=xl155 style='border-top:none;border-left:none'>0.01358</td>
+  <td class=xl147 style='border-top:none;border-left:none'>1.6</td>
+  <td class=xl157 style='border-top:none;border-left:none'>-0.218</td>
+  <td class=xl142 style='border-top:none;border-left:none'>Weak</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Other</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl76 style='height:18.0pt;border-top:none'>18</td>
+  <td class=xl100 style='border-top:none;border-left:none'>WindSpeed_ms</td>
+  <td class=xl153 style='border-top:none;border-left:none'>0.01272</td>
+  <td class=xl150 style='border-top:none;border-left:none'>1.5</td>
+  <td class=xl156 style='border-top:none;border-left:none'>-0.026</td>
+  <td class=xl136 style='border-top:none;border-left:none'>Weak</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Wind</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl84 style='height:18.0pt;border-top:none'>19</td>
+  <td class=xl94 style='border-top:none;border-left:none'>SolarRadiation_Jm2_lag3</td>
+  <td class=xl155 style='border-top:none;border-left:none'>0.01223</td>
+  <td class=xl147 style='border-top:none;border-left:none'>1.4</td>
+  <td class=xl157 style='border-top:none;border-left:none'>-0.207</td>
+  <td class=xl142 style='border-top:none;border-left:none'>Weak</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Other</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl76 style='height:18.0pt;border-top:none'>20</td>
+  <td class=xl100 style='border-top:none;border-left:none'>RH_percent_lag3</td>
+  <td class=xl153 style='border-top:none;border-left:none'>0.01057</td>
+  <td class=xl150 style='border-top:none;border-left:none'>1.2</td>
+  <td class=xl156 style='border-top:none;border-left:none'>0.230</td>
+  <td class=xl136 style='border-top:none;border-left:none'>Weak</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Humidity</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl84 style='height:18.0pt;border-top:none'>21</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Mean_Temp_C</td>
+  <td class=xl155 style='border-top:none;border-left:none'>0.00986</td>
+  <td class=xl147 style='border-top:none;border-left:none'>1.2</td>
+  <td class=xl157 style='border-top:none;border-left:none'>-0.135</td>
+  <td class=xl142 style='border-top:none;border-left:none'>Weak</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Other</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl76 style='height:18.0pt;border-top:none'>22</td>
+  <td class=xl100 style='border-top:none;border-left:none'>DTR</td>
+  <td class=xl153 style='border-top:none;border-left:none'>0.00916</td>
+  <td class=xl150 style='border-top:none;border-left:none'>1.1</td>
+  <td class=xl105 style='border-top:none;border-left:none'>0.325</td>
+  <td class=xl106 style='border-top:none;border-left:none'>Moderate</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Other</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl84 style='height:18.0pt;border-top:none'>23</td>
+  <td class=xl94 style='border-top:none;border-left:none'>SolarRadiation_Jm2</td>
+  <td class=xl155 style='border-top:none;border-left:none'>0.00900</td>
+  <td class=xl147 style='border-top:none;border-left:none'>1.1</td>
+  <td class=xl157 style='border-top:none;border-left:none'>-0.116</td>
+  <td class=xl142 style='border-top:none;border-left:none'>Weak</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.2500</td>
+  <td class=xl148 style='border-top:none;border-left:none'>No</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Other</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl76 style='height:18.0pt;border-top:none'>24</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Vegetation_km2</td>
+  <td class=xl153 style='border-top:none;border-left:none'>0.00835</td>
+  <td class=xl150 style='border-top:none;border-left:none'>1.0</td>
+  <td class=xl156 style='border-top:none;border-left:none'>-0.085</td>
+  <td class=xl136 style='border-top:none;border-left:none'>Weak</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Other</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl84 style='height:18.0pt;border-top:none'>25</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Urban_Expansion_Index_NDBI</td>
+  <td class=xl155 style='border-top:none;border-left:none'>0.00815</td>
+  <td class=xl147 style='border-top:none;border-left:none'>1.0</td>
+  <td class=xl157 style='border-top:none;border-left:none'>-0.178</td>
+  <td class=xl142 style='border-top:none;border-left:none'>Weak</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Other</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl76 style='height:18.0pt;border-top:none'>26</td>
+  <td class=xl100 style='border-top:none;border-left:none'>NDVI_lag5</td>
+  <td class=xl153 style='border-top:none;border-left:none'>0.00746</td>
+  <td class=xl150 style='border-top:none;border-left:none'>0.9</td>
+  <td class=xl105 style='border-top:none;border-left:none'>0.296</td>
+  <td class=xl106 style='border-top:none;border-left:none'>Moderate</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Other</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl84 style='height:18.0pt;border-top:none'>27</td>
+  <td class=xl94 style='border-top:none;border-left:none'>LST_C_lag3</td>
+  <td class=xl155 style='border-top:none;border-left:none'>0.00708</td>
+  <td class=xl147 style='border-top:none;border-left:none'>0.8</td>
+  <td class=xl102 style='border-top:none;border-left:none'>-0.297</td>
+  <td class=xl103 style='border-top:none;border-left:none'>Moderate</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Land Surface Temp</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl76 style='height:18.0pt;border-top:none'>28</td>
+  <td class=xl100 style='border-top:none;border-left:none'>PM2_5_mean_ugm3</td>
+  <td class=xl153 style='border-top:none;border-left:none'>0.00689</td>
+  <td class=xl150 style='border-top:none;border-left:none'>0.8</td>
+  <td class=xl156 style='border-top:none;border-left:none'>0.070</td>
+  <td class=xl136 style='border-top:none;border-left:none'>Weak</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Other</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl84 style='height:18.0pt;border-top:none'>29</td>
+  <td class=xl94 style='border-top:none;border-left:none'>NDVI_lag7</td>
+  <td class=xl155 style='border-top:none;border-left:none'>0.00581</td>
+  <td class=xl147 style='border-top:none;border-left:none'>0.7</td>
+  <td class=xl102 style='border-top:none;border-left:none'>0.276</td>
+  <td class=xl103 style='border-top:none;border-left:none'>Moderate</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Other</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl76 style='height:18.0pt;border-top:none'>30</td>
+  <td class=xl100 style='border-top:none;border-left:none'>NDVI</td>
+  <td class=xl153 style='border-top:none;border-left:none'>0.00335</td>
+  <td class=xl150 style='border-top:none;border-left:none'>0.4</td>
+  <td class=xl156 style='border-top:none;border-left:none'>0.225</td>
+  <td class=xl136 style='border-top:none;border-left:none'>Weak</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.3251</td>
+  <td class=xl158 style='border-top:none;border-left:none'>No</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Vegetation</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl84 style='height:18.0pt;border-top:none'>31</td>
+  <td class=xl94 style='border-top:none;border-left:none'>NDVI_roll7_mean</td>
+  <td class=xl155 style='border-top:none;border-left:none'>0.00306</td>
+  <td class=xl147 style='border-top:none;border-left:none'>0.4</td>
+  <td class=xl102 style='border-top:none;border-left:none'>0.263</td>
+  <td class=xl103 style='border-top:none;border-left:none'>Moderate</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Other</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl76 style='height:18.0pt;border-top:none'>32</td>
+  <td class=xl100 style='border-top:none;border-left:none'>NDVI_lag3</td>
+  <td class=xl153 style='border-top:none;border-left:none'>0.00277</td>
+  <td class=xl150 style='border-top:none;border-left:none'>0.3</td>
+  <td class=xl105 style='border-top:none;border-left:none'>0.270</td>
+  <td class=xl106 style='border-top:none;border-left:none'>Moderate</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Vegetation</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl84 style='height:18.0pt;border-top:none'>33</td>
+  <td class=xl94 style='border-top:none;border-left:none'>LST_C_roll7_mean</td>
+  <td class=xl155 style='border-top:none;border-left:none'>0.00256</td>
+  <td class=xl147 style='border-top:none;border-left:none'>0.3</td>
+  <td class=xl102 style='border-top:none;border-left:none'>-0.312</td>
+  <td class=xl103 style='border-top:none;border-left:none'>Moderate</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl84 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl94 style='border-top:none;border-left:none'>Other</td>
+ </tr>
+ <tr height=24 style='mso-height-source:userset;height:18.0pt'>
+  <td height=24 class=xl76 style='height:18.0pt;border-top:none'>34</td>
+  <td class=xl100 style='border-top:none;border-left:none'>LST_C_roll5_mean</td>
+  <td class=xl153 style='border-top:none;border-left:none'>0.00143</td>
+  <td class=xl150 style='border-top:none;border-left:none'>0.2</td>
+  <td class=xl105 style='border-top:none;border-left:none'>-0.302</td>
+  <td class=xl106 style='border-top:none;border-left:none'>Moderate</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl76 style='border-top:none;border-left:none'>N/A</td>
+  <td class=xl100 style='border-top:none;border-left:none'>Other</td>
+ </tr>
+ <tr height=38 style='height:28.8pt;mso-xlrowspan:2'>
+  <td height=38 colspan=9 style='height:28.8pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=29 style='mso-height-source:userset;height:21.75pt'>
+  <td colspan=8 height=29 class=xl175 style='height:21.75pt'>GRANGER CAUSALITY
+  DETAIL — KEY VARIABLES</td>
+  <td></td>
+ </tr>
+ <tr height=29 style='mso-height-source:userset;height:21.75pt'>
+  <td height=29 class=xl65 width=134 style='height:21.75pt;width:100pt'>Variable</td>
+  <td class=xl65 width=202 style='border-left:none;width:151pt'>Best Lag
+  (Years)</td>
+  <td class=xl65 width=101 style='border-left:none;width:76pt'>p-value</td>
+  <td class=xl65 width=86 style='border-left:none;width:65pt'>Significant</td>
+  <td class=xl65 width=207 style='border-left:none;width:155pt'>Interpretation</td>
+  <td class=xl65 width=204 style='border-left:none;width:153pt'>Policy
+  Implication</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td height=40 class=xl66 style='height:30.0pt;border-top:none'>SoilMoisture</td>
+  <td class=xl84 style='border-top:none;border-left:none'>1</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.1008</td>
+  <td class=xl68 style='border-top:none;border-left:none'>No</td>
+  <td class=xl123 width=207 style='border-top:none;border-left:none;width:155pt'>Moisture
+  levels don't directly precede HWI spikes in lag-1 tests</td>
+  <td class=xl123 width=204 style='border-top:none;border-left:none;width:153pt'>Monitor
+  soil hydrology for compound risk signals</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td height=40 class=xl74 style='height:30.0pt;border-top:none'>SolarRadiation_Jm2</td>
+  <td class=xl76 style='border-top:none;border-left:none'>2</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.2500</td>
+  <td class=xl81 style='border-top:none;border-left:none'>No</td>
+  <td class=xl127 width=207 style='border-top:none;border-left:none;width:155pt'>Solar
+  radiation precedes HWI with 2-yr lag — near threshold</td>
+  <td class=xl127 width=204 style='border-top:none;border-left:none;width:153pt'>Track
+  solar trends for early-warning integration</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td height=40 class=xl66 style='height:30.0pt;border-top:none'>Max_Temp_C</td>
+  <td class=xl84 style='border-top:none;border-left:none'>1</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.2586</td>
+  <td class=xl68 style='border-top:none;border-left:none'>No</td>
+  <td class=xl123 width=207 style='border-top:none;border-left:none;width:155pt'>Max
+  temperature correlated but not Granger-causal in isolation</td>
+  <td class=xl123 width=204 style='border-top:none;border-left:none;width:153pt'>Use
+  as primary target metric for heat emergency triggers</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td height=40 class=xl74 style='height:30.0pt;border-top:none'>RH_percent</td>
+  <td class=xl76 style='border-top:none;border-left:none'>1</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.2811</td>
+  <td class=xl81 style='border-top:none;border-left:none'>No</td>
+  <td class=xl127 width=207 style='border-top:none;border-left:none;width:155pt'>Humidity
+  not a leading indicator of HWI shifts</td>
+  <td class=xl127 width=204 style='border-top:none;border-left:none;width:153pt'>Combine
+  with temperature for wet-bulb heat stress alerts</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td height=40 class=xl66 style='height:30.0pt;border-top:none'>NDVI</td>
+  <td class=xl84 style='border-top:none;border-left:none'>1</td>
+  <td class=xl121 style='border-top:none;border-left:none'>0.3251</td>
+  <td class=xl68 style='border-top:none;border-left:none'>No</td>
+  <td class=xl123 width=207 style='border-top:none;border-left:none;width:155pt'>Vegetation
+  loss follows heat, not a leading cause</td>
+  <td class=xl123 width=204 style='border-top:none;border-left:none;width:153pt'>Urban
+  greening programs to counter vegetation-heat feedback</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=40 style='mso-height-source:userset;height:30.0pt'>
+  <td height=40 class=xl74 style='height:30.0pt;border-top:none'>Rainfall_mm</td>
+  <td class=xl76 style='border-top:none;border-left:none'>3</td>
+  <td class=xl126 style='border-top:none;border-left:none'>0.8129</td>
+  <td class=xl81 style='border-top:none;border-left:none'>No</td>
+  <td class=xl127 width=207 style='border-top:none;border-left:none;width:155pt'>Rainfall
+  decline is a long-lag consequence, not driver</td>
+  <td class=xl127 width=204 style='border-top:none;border-left:none;width:153pt'>Water
+  resource planning for heat-drought co-occurrence</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=134 style='width:100pt'></td>
+  <td width=202 style='width:151pt'></td>
+  <td width=101 style='width:76pt'></td>
+  <td width=86 style='width:65pt'></td>
+  <td width=207 style='width:155pt'></td>
+  <td width=204 style='width:153pt'></td>
+  <td width=86 style='width:65pt'></td>
+  <td width=86 style='width:65pt'></td>
+  <td width=130 style='width:97pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>
